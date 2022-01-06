@@ -5,6 +5,8 @@ metadata:
   labels:
     {{- include "install.labels" . | nindent 4 }}
 spec:
+imagePullSecrets:
+        - name: {{ .Values.pgo_image_pull_secret }}
   replicas: 1
   selector:
     matchLabels:
